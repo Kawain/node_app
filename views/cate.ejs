@@ -1,0 +1,49 @@
+<% include header %>
+<div class="container my-4">
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb mb-1">
+            <li class="breadcrumb-item"><a href="/">ホーム</a></li>
+            <li class="breadcrumb-item active" aria-current="page"><%= title %></li>
+        </ol>
+    </nav>
+
+    <h1 class="my-4"><%= title %></h1>
+
+    <form action="/post/cate/insert" method="POST">
+        <div class="input-group mb-3">
+            <input type="text" name="name" class="form-control" placeholder="カテゴリ名" aria-label="カテゴリ新規作成"
+                aria-describedby="button-addon2" required>
+            <div class="input-group-append">
+                <button type="submit" class="btn btn-outline-secondary">カテゴリ新規作成</button>
+            </div>
+        </div>
+    </form>
+
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>カテゴリ</th>
+                <th>編集</th>
+                <th>削除</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% for (let v of lst) { %>
+            <tr>
+                <td><%= v.id %></td>
+                <td>
+                    <input id="id_<%- v.id %>" class="form-control" type="text" value="<%= v.name %>">
+                </td>
+                <td>
+                    <button class="btn btn-primary" data-id="<%- v.id %>">編集</button>
+                </td>
+                <td>
+                    <button class="btn btn-danger cate" data-id="<%- v.id %>">削除</button>
+                </td>
+            </tr>
+            <% } %>
+        </tbody>
+    </table>
+</div>
+<% include footer%>

@@ -1,0 +1,17 @@
+.jumbotron {
+    font-family: "メイリオ", sans-serif;
+}
+
+pre {
+    font-family: "Consolas", sans-serif;
+    background-color: #e9ecef;
+}
+
+#id_detail {
+    height: 500px;
+}
+
+.dropdown-menu {
+    height: 300px;
+    overflow-y: auto;
+}

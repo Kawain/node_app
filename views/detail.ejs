@@ -1,0 +1,25 @@
+<% include header %>
+<div class="container my-4">
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb mb-1">
+            <li class="breadcrumb-item"><a href="/">ホーム</a></li>
+            <li class="breadcrumb-item"><a href="/search/<%- obj.cate_id %>"><%= obj.name %></a>
+            </li>
+            <li class="breadcrumb-item active" aria-current="page"><%= obj.title %></li>
+        </ol>
+    </nav>
+
+    <h1 class="my-4"><%= obj.title %></h1>
+    <div class="progress">
+        <div class="progress-bar" role="progressbar" style="width:<%- obj.attention %>%;"
+            aria-valuenow="<%- obj.attention %>" aria-valuemin="0" aria-valuemax="100"></div>
+    </div>
+
+    <div class="box" style="padding:10px;"><%- obj.detail %></div>
+
+    <div class="btn-group d-flex" role="group" aria-label="group">
+        <a href="/detail/<%- obj.id %>/form" class="btn btn-primary w-100" role="button">編集</a>
+    </div>
+
+</div>
+<% include footer%>

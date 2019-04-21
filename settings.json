@@ -1,0 +1,4 @@
+{
+    "DBPATH": "./sqlite_node_db",
+    "RowsPerPage": 50
+}
