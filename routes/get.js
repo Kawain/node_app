@@ -221,6 +221,7 @@ FROM memo m LEFT OUTER JOIN cate c ON m.cate_id = c.id WHERE m.id = ?;`;
     db.get(sql, [parseInt(req.params.id)], (err, row) => {
         row.detail = md.render(row.detail);
         if (!err) {
+            row.attention = row.attention * 10;
             res.render('detail', {
                 title: row.title,
                 obj: row,

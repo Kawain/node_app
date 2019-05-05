@@ -1,4 +1,4 @@
 {
-    "DBPATH": "./sqlite_node_db",
+    "DBPATH": "./db/note.db",
     "RowsPerPage": 50
 }
